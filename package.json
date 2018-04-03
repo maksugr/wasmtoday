@@ -1,0 +1,35 @@
+{
+  "name": "wasm-today",
+  "description": "Your entry point to WebAssembly scope",
+  "version": "1.0.0",
+  "author": "Roman Ponomarev <maksugr@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.241",
+    "gatsby-link": "^1.6.39",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "wasmtoday",
+    "wasm",
+    "webassembly"
+  ],
+  "license": "GPL-3.0",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3"
+  }
+}
