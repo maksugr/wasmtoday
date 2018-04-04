@@ -1,9 +1,11 @@
 module.exports = {
-  "extends": [
-    "standard",
-    "plugin:react/recommended"
+  extends: [
+    'standard',
+    'plugin:react/recommended',
+    'plugin:flowtype/recommended'
   ],
-  "rules": {
-    "semi": ["error", "always"]
+  plugins: ['flowtype'],
+  rules: {
+    semi: ['error', 'always']
   }
 };

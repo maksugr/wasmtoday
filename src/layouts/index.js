@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -6,6 +8,10 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import './reset.css';
 
+type Props = {
+  children: Function
+}
+
 const StyledLayout = styled.div`
   margin: 0 auto;
   max-width: 960px;
@@ -13,7 +19,7 @@ const StyledLayout = styled.div`
   padding-top: 0;
 `;
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({children}: Props) => (
   <div>
     <Helmet
       title="wasm.today"

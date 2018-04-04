@@ -1,6 +1,8 @@
+'use strict';
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter'
+    title: 'wasm.today'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
