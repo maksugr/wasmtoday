@@ -1,33 +1,37 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
+
+const StyledHeaderOuterWrapper = styled.div`
+  background: rebeccapurple;
+  margin-bottom: 1.45rem;
+`
+
+const StyledHeaderInnerWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+`
+
+const StyledH1 = styled.h1`
+  margin: 0;
+`
+
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`
 
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
+  <StyledHeaderOuterWrapper>
+    <StyledHeaderInnerWrapper>
+      <StyledH1>
+        <StyledLink to='/'>
           wasm.today
-        </Link>
-      </h1>
-    </div>
-  </div>
+        </StyledLink>
+      </StyledH1>
+    </StyledHeaderInnerWrapper>
+  </StyledHeaderOuterWrapper>
 )
 
 export default Header
