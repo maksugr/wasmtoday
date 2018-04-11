@@ -1,9 +1,8 @@
 // @flow
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled, {injectGlobal} from 'styled-components';
 
 import Header from '../components/Header';
 import Menu from '../components/Menu';
@@ -16,11 +15,20 @@ type Props = {
   children: Function
 }
 
+injectGlobal`
+  body {
+    background: #fcfcfc;
+  }
+`;
+
 const StyledLayout = styled.div`
   display: flex;
   flex-flow: column;
   height: 100vh;
   padding: 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+  background: #fff;
 `;
 
 const StyledHeader = styled.header`
@@ -37,8 +45,9 @@ const StyledMainContent = styled.div`
 `;
 
 const StyledMenu = styled.aside`
-  flex: 0 0 150px;
+  flex: 0 0 170px;
   order: 1;
+  padding-right: 20px;
 `;
 
 const StyledArticle = styled.article`
@@ -87,9 +96,5 @@ const TemplateWrapper = ({children}: Props) => (
     </StyledLayout>
   </div>
 );
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-};
 
 export default TemplateWrapper;

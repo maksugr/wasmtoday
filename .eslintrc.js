@@ -7,5 +7,8 @@ module.exports = {
   plugins: ['flowtype'],
   rules: {
     semi: ['error', 'always']
+  },
+  globals: {
+    'graphql': true
   }
 };

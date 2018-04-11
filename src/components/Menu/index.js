@@ -9,17 +9,43 @@ const StyledMenu = styled.div`
   flex-flow: column;
 `;
 
-const StyledLink = styled(Link)`
+const StyledMenuElem = styled.div`
   margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const StyledLink = styled(Link)`
   color: #000;
   text-decoration: none;
 `;
 
+const StyledSeparator = styled.div`
+  height: 1px;
+  max-width: 50%;
+  background: #f3f3f3;
+  margin: 5px 0;
+`;
+
 const Menu = () => (
   <StyledMenu>
-    <StyledLink to='/'>Menu</StyledLink>
-    <StyledLink to='/'>Menu</StyledLink>
-    <StyledLink to='/'>Menu</StyledLink>
+    <StyledMenuElem>
+      <StyledLink to='/news'>news</StyledLink>
+    </StyledMenuElem>
+    <StyledMenuElem>
+      <StyledLink to='/tldr'>tl;dr</StyledLink>
+    </StyledMenuElem>
+    <StyledMenuElem>
+      <StyledSeparator />
+    </StyledMenuElem>
+    <StyledMenuElem>
+      <StyledLink to='/why'>why?</StyledLink>
+    </StyledMenuElem>
+    <StyledMenuElem>
+      <StyledLink to='/contacts'>contacts</StyledLink>
+    </StyledMenuElem>
   </StyledMenu>
 );
 
