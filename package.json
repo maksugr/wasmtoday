@@ -5,7 +5,7 @@
   "author": "Roman Ponomarev <maksugr@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
-    "gatsby": "^1.9.241",
+    "gatsby": "^1.9.253",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-styled-components": "^2.0.11",
