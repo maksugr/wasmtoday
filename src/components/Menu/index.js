@@ -44,7 +44,7 @@ const Menu = () => (
       <StyledLink to='/why'>why?</StyledLink>
     </StyledMenuElem>
     <StyledMenuElem>
-      <StyledLink to='/contacts'>contacts</StyledLink>
+      <StyledLink to='/contact'>contact</StyledLink>
     </StyledMenuElem>
   </StyledMenu>
 );

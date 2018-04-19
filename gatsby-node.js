@@ -13,32 +13,29 @@ module.exports = {
 
     return graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark{
           edges {
             node {
-              fields {
-                slug
+              frontmatter {
+                path
               }
             }
           }
         }
       }
-    `).then((result) => {
+    `).then(result => {
       if (result.errors) {
         return Promise.reject(result.errors);
       }
 
-      result.data.allMarkdownRemark.edges
-        .filter(({node: {fields}}) => fields)
-        .forEach(({node: {fields: {slug}}}) => {
-          createPage({
-            path: slug,
-            component: resolve(`./src/templates/markdown.js`),
-            context: {
-              slug
-            }
-          });
+      result.data.allMarkdownRemark.edges.forEach(({node: {frontmatter}}) => {
+        const {path} = frontmatter;
+
+        createPage({
+          path,
+          component: resolve(`src/templates/markdown.js`)
         });
+      });
     });
   }
 };

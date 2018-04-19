@@ -6,7 +6,8 @@ module.exports = {
   ],
   plugins: ['flowtype'],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'space-before-function-paren': ['error', 'never']
   },
   globals: {
     'graphql': true

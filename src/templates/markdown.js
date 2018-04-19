@@ -6,36 +6,32 @@ type Props = {|
   data: {
     markdownRemark: {
       frontmatter: {
-        title: string
+        date: string
       },
       html: string
     }
   }
 |};
 
-export default function Template ({data}: Props) {
-  const {
-    markdownRemark: {
-      frontmatter,
-      html
-    }
-  } = data;
-
+export default function Markdown({data}: Props) {
+  const {markdownRemark} = data;
+  const {frontmatter, html} = markdownRemark;
   return (
     <div>
-      <h1>{frontmatter.title}</h1>
+      <time>{frontmatter.date}</time>
       <div dangerouslySetInnerHTML={{__html: html}} />
     </div>
   );
-};
+}
 
-export const query = graphql`
-  query MarkdownQuery($slug: String!) {
-    markdownRemark(fields: {slug: {eq: $slug}}) {
-      frontmatter {
-        title
-      }
+export const markdownQuery = graphql`
+  query MarkdownQuery($path: String!) {
+    markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+      }
     }
   }
 `;
